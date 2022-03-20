@@ -11,4 +11,5 @@
 ![kopp2_pc_exp2_5](https://user-images.githubusercontent.com/92477489/159168572-ee52ad78-c490-4804-981a-ccf7fc11dda3.jpg)
 
 # Реализация
-[RPG Game Diagram.pdf](https://github.com/timkingteam/project/files/8311495/RPG.Game.Diagram.pdf)
+
+![RPG Game Diagram](https://user-images.githubusercontent.com/92477489/159168758-b35682ca-29d9-4457-b16b-655e5df4a2d7.jpeg)
