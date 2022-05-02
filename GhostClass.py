@@ -1,6 +1,6 @@
 import pygame
 from pygame.math import Vector2
-from varuables import *
+from variables import *
 from map import *
 import random
 from UnitClass import Unit
