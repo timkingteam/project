@@ -21,7 +21,7 @@ class Game:
         self.coins = []
         self.coin_number = TOTAL_COINS
         GENERATE_WALLS()
-        self.pacman = Pacman(START_POSITION, SLOW_SPEED, self)
+        self.pacman = Pacman(START_POSITION, NORMAL_SPEED, self)
         self.ghosts = []
         self.MakeGhosts()
         self.map = pygame.image.load('map.png')
