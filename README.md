@@ -7,9 +7,13 @@
 
 # Файлы
 **run.sh** - исполняемый файл. Скачивает **requirements.txt** и запускает **main.py**
+
 **main.py** - основной файл проекта. Он просто запускает __init__ у класса Game из **game.py**
+
 **UnitClass**, **PacmanClass**, **GhostClass** - файлы классов
+
 **map.py** - 2d list карты
+
 **variables.py** - глобальные переменные
 
 # Архитектура
