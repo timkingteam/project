@@ -7,16 +7,15 @@ from UnitClass import Unit
 
 class Pacman(Unit):
     def __init__(self, pos, speed, game):
-        self.dead = False
-        self.pos = pos
-        self.speed = speed
         self.game = game
+        self.pos = pos
         self.actual_pos = Vector2(
             self.pos.x * CELL_SIZE + CELL_SIZE//2, self.pos.y * CELL_SIZE + CELL_SIZE//2)
-        self.direction = Vector2(0, 0)
-        self.stored_direction = Vector2(0, 0)
-        self.UpdatePos()
+        self.speed = speed
+        self.movement = Vector2(0, 0)
+        self.stored_movement = Vector2(0, 0)
         self.IsMoving = True
+        self.dead = False
 
     def Update(self):
         self.UpdatePos()
@@ -30,10 +29,10 @@ class Pacman(Unit):
 
     def UpdatePos(self):
         if self.InCell():
-            self.direction = self.stored_direction
+            self.movement = self.stored_movement
             self.IsMoving = self.NotOnWall()
         if self.IsMoving:
-            self.actual_pos += self.direction * self.speed
+            self.actual_pos += self.movement * self.speed
         self.pos = Vector2(self.actual_pos.x//CELL_SIZE,
                            self.actual_pos.y//CELL_SIZE)
 

@@ -18,17 +18,17 @@ class Game:
         self.gameDisplay = pygame.display.set_mode((WIDTH, HEIGHT))
         self.clock = pygame.time.Clock()
         self.current_event = 'OpenScreen'
-        self.map = pygame.image.load('map.png')
-        self.map = pygame.transform.scale(self.map, (WIDTH, HEIGHT))
-        self.pacman_img = pygame.image.load('pacman.png')
-        self.pacman_img = pygame.transform.scale(
-            self.pacman_img, (200, 200))
         self.coins = []
         self.coin_number = TOTAL_COINS
         GENERATE_WALLS()
         self.pacman = Pacman(START_POSITION, SLOW_SPEED, self)
         self.ghosts = []
         self.MakeGhosts()
+        self.map = pygame.image.load('map.png')
+        self.map = pygame.transform.scale(self.map, (WIDTH, HEIGHT))
+        self.pacman_img = pygame.image.load('pacman.png')
+        self.pacman_img = pygame.transform.scale(
+            self.pacman_img, (200, 200))
 
     def run(self):
         while (True):
@@ -64,13 +64,12 @@ class Game:
 
     ########## Sub Events ############
 
-    ## Play ##
+    ## Main ##
     def PlayDraw(self):
         self.gameDisplay.blit(self.map, (0, 0))
         for coin in self.coins:
             self.DrawCoin(coin)
         self.DrawScore(TOTAL_COINS - self.coin_number)
-        # self.draw_grid()
         self.pacman.Draw()
         for ghost in self.ghosts:
             ghost.Draw()
@@ -147,7 +146,6 @@ class Game:
                 quit()
 
     ########## Stuff ###############
-
     def draw_text(self, text, color, posX, posY):
         text_surface = self.my_font.render(text, False, color)
         self.gameDisplay.blit(text_surface, (posX, posY))
@@ -160,25 +158,10 @@ class Game:
         self.my_font = pygame.font.SysFont('arial', 32, bold=True)
         pygame.font.Font.bold
 
-    ####
-    def draw_grid(self):
-        for x in range(1, 27):
-            pygame.draw.line(self.gameDisplay, WHITE,
-                             (x*CELL_SIZE, 0), (x*CELL_SIZE, HEIGHT))
-            pygame.draw.line(self.gameDisplay, WHITE,
-                             (0, x*CELL_SIZE), (WIDTH, x*CELL_SIZE))
-    ####
-
-    def MakeGhosts(self):
-        pass
-        self.ghosts.append(
-            Ghost(GHOST1_POSITION, NORMAL_SPEED, 'Normal', RED, self))
-        self.ghosts.append(
-            Ghost(GHOST2_POSITION, NORMAL_SPEED, 'DownRight', PINK, self))
-        self.ghosts.append(
-            Ghost(GHOST3_POSITION, NORMAL_SPEED, 'DownLeft', ORANGE, self))
-        self.ghosts.append(
-            Ghost(GHOST4_POSITION, SLOW_SPEED, 'Normal', CYAN, self))
+    def DrawScore(self, score):
+        self.set_small_font()
+        self.draw_text("SCORE: {}".format(score), WHITE,
+                       WIDTH//2 - 40, 0)
 
     def DrawCoin(self, coin):
         pos = Vector2(
@@ -197,7 +180,13 @@ class Game:
         if self.coin_number == 0:
             self.current_event = 'WinScreen'
 
-    def DrawScore(self, score):
-        self.set_small_font()
-        self.draw_text("SCORE: {}".format(score), WHITE,
-                       WIDTH//2 - 40, 0)
+    def MakeGhosts(self):
+        pass
+        self.ghosts.append(
+            Ghost(GHOST1_POSITION, NORMAL_SPEED, 'Normal', RED, self))
+        self.ghosts.append(
+            Ghost(GHOST2_POSITION, NORMAL_SPEED, 'DownRight', PINK, self))
+        self.ghosts.append(
+            Ghost(GHOST3_POSITION, NORMAL_SPEED, 'DownLeft', ORANGE, self))
+        self.ghosts.append(
+            Ghost(GHOST4_POSITION, SLOW_SPEED, 'Normal', CYAN, self))
