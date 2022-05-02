@@ -1,7 +1,7 @@
 import pygame
 from PacmanClass import Pacman
 from GhostClass import Ghost
-from varuables import *
+from variables import *
 from map import *
 
 
