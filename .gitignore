@@ -3,3 +3,12 @@ __pycache__/
 .Python
 pip-log.txt
 pip-delete-this-directory.txt
+build/
+dist/
+.manifest
+.spec
+lib/
+lib64/
+.installed.cfg
+*.log
+
