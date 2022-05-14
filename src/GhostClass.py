@@ -32,9 +32,6 @@ class Ghost(Unit):
         self.pos = Vector2(self.actual_pos.x//CELL_SIZE,
                            self.actual_pos.y//CELL_SIZE)
 
-    def MoveUp(self):
-        self.stored_movement = Vector2(1, 0)
-
     def Draw(self):
         pygame.draw.circle(self.game.gameDisplay, self.color,
                            (self.actual_pos.x, self.actual_pos.y), CELL_SIZE//2)
@@ -43,9 +40,6 @@ class Ghost(Unit):
 
     def random_movement(self):
         random.choice(self.behaviour)()
-
-    def MoveUp(self):
-        self.stored_movement = Vector2(0, -1)
 
     def get_behaviour(self, type):
         match type:
