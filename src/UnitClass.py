@@ -1,8 +1,7 @@
-from types import CellType
 import pygame
 from pygame.math import Vector2
-from variables import *
-from map import *
+from src.variables import *
+from src.map import *
 
 
 class Unit:

@@ -1,9 +1,9 @@
 import pygame
 from pygame.math import Vector2
-from variables import *
-from map import *
+from src.variables import *
+from src.map import *
 import random
-from UnitClass import Unit
+from src.UnitClass import Unit
 
 
 class Ghost(Unit):

@@ -1,8 +1,8 @@
 import pygame
 from pygame.math import Vector2
-from variables import *
-from map import *
-from UnitClass import Unit
+from src.variables import *
+from src.map import *
+from src.UnitClass import Unit
 
 
 class Pacman(Unit):

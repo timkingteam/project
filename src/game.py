@@ -1,8 +1,8 @@
+from src.map import *
+from src.variables import *
+from src.GhostClass import Ghost
+from src.PacmanClass import Pacman
 import pygame
-from PacmanClass import Pacman
-from GhostClass import Ghost
-from variables import *
-from map import *
 
 
 class Game:
@@ -24,9 +24,9 @@ class Game:
         self.pacman = Pacman(START_POSITION, NORMAL_SPEED, self)
         self.ghosts = []
         self.MakeGhosts()
-        self.map = pygame.image.load('map.png')
+        self.map = pygame.image.load('./images/map.png')
         self.map = pygame.transform.scale(self.map, (WIDTH, HEIGHT))
-        self.pacman_img = pygame.image.load('pacman.png')
+        self.pacman_img = pygame.image.load('./images/pacman.png')
         self.pacman_img = pygame.transform.scale(
             self.pacman_img, (200, 200))
 
