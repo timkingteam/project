@@ -1,6 +1,8 @@
 from src.map import *
 from src.varuables import *
 from src.ghostSpecies.RandomGhostClass import RandomGhost
+from src.ghostSpecies.AngryGhostClass import AngryGhost
+from src.ghostSpecies.NotThatAngryGhostClass import NotThatAngryGhost
 from src.PacmanClass import Pacman
 import pygame
 
@@ -21,7 +23,7 @@ class Game:
         self.coins = []
         self.coin_number = TOTAL_COINS
         GENERATE_WALLS()
-        self.pacman = Pacman(START_POSITION, NORMAL_SPEED, self)
+        self.pacman = Pacman(START_POSITION, FAST_SPEED, self)
         self.ghosts = []
         self.MakeGhosts()
         self.map = pygame.image.load('./images/map.png')
@@ -183,10 +185,10 @@ class Game:
     def MakeGhosts(self):
         pass
         self.ghosts.append(
-            RandomGhost(GHOST1_POSITION, NORMAL_SPEED, RED, self))
+            AngryGhost(GHOST1_POSITION, SLOW_SPEED, RED, self))
         self.ghosts.append(
-            RandomGhost(GHOST2_POSITION, NORMAL_SPEED, PINK, self))
+            RandomGhost(GHOST2_POSITION, SLOW_SPEED, CYAN, self))
         self.ghosts.append(
-            RandomGhost(GHOST3_POSITION, NORMAL_SPEED, ORANGE, self))
+            RandomGhost(GHOST3_POSITION, FAST_SPEED, ORANGE, self))
         self.ghosts.append(
-            RandomGhost(GHOST4_POSITION, SLOW_SPEED, CYAN, self))
+            NotThatAngryGhost(GHOST4_POSITION, SLOW_SPEED, PINK, self))

@@ -2,7 +2,6 @@ import pygame
 from pygame.math import Vector2
 from src.varuables import *
 from src.map import *
-import random
 from src.UnitClass import Unit
 
 
@@ -16,7 +15,6 @@ class Ghost(Unit):
         self.movement = Vector2(0, 0)
         self.stored_movement = Vector2(0, 0)
         self.IsMoving = True
-        #self.behaviour = self.get_behaviour(behaviour)
         self.color = color
 
     def Update(self):
@@ -40,13 +38,3 @@ class Ghost(Unit):
 
     def get_behaviour(self):
         raise NotImplementedError
-        match type:
-            case 'Normal':
-                return [self.MoveDown, self.MoveRight,
-                        self.MoveUp, self.MoveLeft]
-            case 'DownRight':
-                return [self.MoveDown, self.MoveDown, self.MoveRight,
-                        self.MoveRight, self.MoveUp, self.MoveLeft]
-            case 'DownLeft':
-                return [self.MoveDown, self.MoveDown, self.MoveRight,
-                        self.MoveUp, self.MoveLeft, self.MoveLeft]
