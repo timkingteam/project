@@ -1,6 +1,6 @@
 from src.map import *
 from src.varuables import *
-from src.GhostClass import Ghost
+from src.ghostSpecies.RandomGhostClass import RandomGhost
 from src.PacmanClass import Pacman
 import pygame
 
@@ -183,10 +183,10 @@ class Game:
     def MakeGhosts(self):
         pass
         self.ghosts.append(
-            Ghost(GHOST1_POSITION, NORMAL_SPEED, 'Normal', RED, self))
+            RandomGhost(GHOST1_POSITION, NORMAL_SPEED, RED, self))
         self.ghosts.append(
-            Ghost(GHOST2_POSITION, NORMAL_SPEED, 'DownRight', PINK, self))
+            RandomGhost(GHOST2_POSITION, NORMAL_SPEED, PINK, self))
         self.ghosts.append(
-            Ghost(GHOST3_POSITION, NORMAL_SPEED, 'DownLeft', ORANGE, self))
+            RandomGhost(GHOST3_POSITION, NORMAL_SPEED, ORANGE, self))
         self.ghosts.append(
-            Ghost(GHOST4_POSITION, SLOW_SPEED, 'Normal', CYAN, self))
+            RandomGhost(GHOST4_POSITION, SLOW_SPEED, CYAN, self))

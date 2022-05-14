@@ -7,7 +7,7 @@ from src.UnitClass import Unit
 
 
 class Ghost(Unit):
-    def __init__(self, pos, speed, behaviour, color, game):
+    def __init__(self, pos, speed, color, game):
         self.game = game
         self.pos = pos
         self.actual_pos = Vector2(
@@ -16,7 +16,7 @@ class Ghost(Unit):
         self.movement = Vector2(0, 0)
         self.stored_movement = Vector2(0, 0)
         self.IsMoving = True
-        self.behaviour = self.get_behaviour(behaviour)
+        #self.behaviour = self.get_behaviour(behaviour)
         self.color = color
 
     def Update(self):
@@ -24,7 +24,7 @@ class Ghost(Unit):
 
     def UpdatePos(self):
         if self.InCell():
-            self.random_movement()
+            self.get_behaviour()
             self.movement = self.stored_movement
             self.IsMoving = self.NotOnWall()
         if self.IsMoving:
@@ -38,10 +38,8 @@ class Ghost(Unit):
         pygame.draw.rect(self.game.gameDisplay, self.color, ((
             self.actual_pos.x - 11, self.actual_pos.y), (22, 11)))
 
-    def random_movement(self):
-        random.choice(self.behaviour)()
-
-    def get_behaviour(self, type):
+    def get_behaviour(self):
+        raise NotImplementedError
         match type:
             case 'Normal':
                 return [self.MoveDown, self.MoveRight,
