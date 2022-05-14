@@ -1,6 +1,6 @@
 import pygame
 from pygame.math import Vector2
-from src.variables import *
+from src.varuables import *
 from src.map import *
 from src.UnitClass import Unit
 

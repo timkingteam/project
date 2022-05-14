@@ -1,5 +1,5 @@
 from src.map import *
-from src.variables import *
+from src.varuables import *
 from src.GhostClass import Ghost
 from src.PacmanClass import Pacman
 import pygame
