@@ -35,7 +35,8 @@ python3 main.py
 <br />
 <br />
 <br />
-**outdted**
+
+**outdated** <br />
 # Файлы
 
 **main.py** - основной файл проекта. Он просто запускает __init__ у класса Game из **game.py**
