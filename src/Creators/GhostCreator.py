@@ -13,11 +13,13 @@ class GhostCreator(Creator):
                 product = RandomGhost()
             case 'NotThatAngry':
                 product = NotThatAngryGhost()
-        self.setGame(product, game)
-        self.setPos(product, pos)
-        self.setMovement(product, speed)
+        self.setUnitAttributes(product, game, pos, speed)
         self.setColor(product, color)
         return product
+
+    def setGhostAttributes(self, product, pos, speed, color, game):
+        self.setUnitAttributes(product, game, pos, speed)
+        self.setColor(product, color)
 
     def setColor(self, product, color):
         product.color = color

@@ -1,4 +1,4 @@
-from src.Creators.GhostCreator import GhostCreator
+from src.Creators.SpeciesGhostCreators import *
 from src.map import *
 from src.varuables import *
 from src.Creators.PacmanCreator import PacmanCreator
@@ -15,8 +15,7 @@ class Game:
         pygame.font.init()
 
     def generate(self):
-        self.pacmanCreator = PacmanCreator()
-        self.ghostCreator = GhostCreator()
+        self.makeCreators()
         self.gameDisplay = pygame.display.set_mode((WIDTH, HEIGHT))
         self.clock = pygame.time.Clock()
         self.current_event = 'OpenScreen'
@@ -185,10 +184,16 @@ class Game:
 
     def MakeGhosts(self):
         self.ghosts.append(
-            self.ghostCreator.Create("Angry", GHOST1_POSITION, SLOW_SPEED, RED, self))
+            self.angryGhostCreator.Create(GHOST1_POSITION, SLOW_SPEED, RED, self))
         self.ghosts.append(
-            self.ghostCreator.Create("Random", GHOST2_POSITION, SLOW_SPEED, CYAN, self))
+            self.randomGhostCreator.Create(GHOST2_POSITION, SLOW_SPEED, CYAN, self))
         self.ghosts.append(
-            self.ghostCreator.Create("Random", GHOST3_POSITION, FAST_SPEED, ORANGE, self))
+            self.randomGhostCreator.Create(GHOST3_POSITION, FAST_SPEED, ORANGE, self))
         self.ghosts.append(
-            self.ghostCreator.Create("NotThatAngry", GHOST4_POSITION, SLOW_SPEED, PINK, self))
+            self.notThatAngryGhostCreator.Create(GHOST4_POSITION, SLOW_SPEED, PINK, self))
+
+    def makeCreators(self):
+        self.pacmanCreator = PacmanCreator()
+        self.randomGhostCreator = RandomGhostCreator()
+        self.angryGhostCreator = AngryGhostCreator()
+        self.notThatAngryGhostCreator = NotThatAngryGhostCreator()

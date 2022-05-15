@@ -6,6 +6,11 @@ class Creator:
     def Create():
         raise NotImplementedError
 
+    def setUnitAttributes(self, product, game, pos, speed):
+        self.setGame(product, game)
+        self.setPos(product, pos)
+        self.setMovement(product, speed)
+
     def setMovement(self, product, speed):
         product.movement = Vector2(0, 0)
         product.stored_movement = Vector2(0, 0)

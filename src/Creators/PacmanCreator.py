@@ -5,9 +5,7 @@ from src.Units.PacmanClass import Pacman
 class PacmanCreator(Creator):
     def Create(self, pos, speed, game):
         product = Pacman()
-        self.setGame(product, game)
-        self.setPos(product, pos)
-        self.setMovement(product, speed)
+        self.setUnitAttributes(product, game, pos, speed)
         self.setDead(product)
         return product
 
