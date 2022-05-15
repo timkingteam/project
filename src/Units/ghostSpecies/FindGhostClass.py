@@ -1,5 +1,5 @@
 from operator import ne
-from src.GhostClass import Ghost
+from src.Units.GhostClass import Ghost
 from src.map import *
 from pygame.math import Vector2
 

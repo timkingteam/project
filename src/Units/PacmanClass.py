@@ -2,20 +2,10 @@ import pygame
 from pygame.math import Vector2
 from src.varuables import *
 from src.map import *
-from src.UnitClass import Unit
+from src.Units.UnitClass import Unit
 
 
 class Pacman(Unit):
-    def __init__(self, pos, speed, game):
-        self.game = game
-        self.pos = pos
-        self.actual_pos = Vector2(
-            self.pos.x * CELL_SIZE + CELL_SIZE//2, self.pos.y * CELL_SIZE + CELL_SIZE//2)
-        self.speed = speed
-        self.movement = Vector2(0, 0)
-        self.stored_movement = Vector2(0, 0)
-        self.IsMoving = True
-        self.dead = False
 
     def Update(self):
         self.UpdatePos()

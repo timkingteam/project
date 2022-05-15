@@ -5,16 +5,6 @@ from src.map import *
 
 
 class Unit:
-    def __init__(self):
-        self.game
-        self.pos
-        self.actual_pos
-        self.speed
-        self.movement
-        self.stored_movement
-        self.IsMoving
-
-        raise NotImplementedError()
 
     def Update(self):
         raise NotImplementedError()

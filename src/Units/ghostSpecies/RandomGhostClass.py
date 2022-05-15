@@ -1,5 +1,5 @@
 import random
-from src.GhostClass import Ghost
+from src.Units.GhostClass import Ghost
 
 
 class RandomGhost(Ghost):

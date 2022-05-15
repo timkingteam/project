@@ -1,5 +1,5 @@
 import random
-from src.ghostSpecies.FindGhostClass import FindGhost
+from src.Units.ghostSpecies.FindGhostClass import FindGhost
 
 
 class NotThatAngryGhost(FindGhost):
