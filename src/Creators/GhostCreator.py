@@ -5,18 +5,6 @@ from src.Units.ghostSpecies.NotThatAngryGhostClass import NotThatAngryGhost
 
 
 class GhostCreator(Creator):
-    def Create(self, behaviour, pos, speed, color, game):
-        match behaviour:
-            case 'Angry':
-                product = AngryGhost()
-            case 'Random':
-                product = RandomGhost()
-            case 'NotThatAngry':
-                product = NotThatAngryGhost()
-        self.setUnitAttributes(product, game, pos, speed)
-        self.setColor(product, color)
-        return product
-
     def setGhostAttributes(self, product, pos, speed, color, game):
         self.setUnitAttributes(product, game, pos, speed)
         self.setColor(product, color)
