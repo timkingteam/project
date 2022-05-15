@@ -1,4 +1,3 @@
-from operator import ne
 from src.Units.GhostClass import Ghost
 from src.map import *
 from pygame.math import Vector2

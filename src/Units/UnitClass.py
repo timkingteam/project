@@ -1,4 +1,3 @@
-import pygame
 from pygame.math import Vector2
 from src.varuables import *
 from src.map import *
